@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/Aris_Seminary-2026/static/css/main.14af92fb.css",
-    "main.js": "/Aris_Seminary-2026/static/js/main.68121d93.js",
+    "main.js": "/Aris_Seminary-2026/static/js/main.c9f846c8.js",
     "static/js/453.3a135c78.chunk.js": "/Aris_Seminary-2026/static/js/453.3a135c78.chunk.js",
     "index.html": "/Aris_Seminary-2026/index.html",
     "main.14af92fb.css.map": "/Aris_Seminary-2026/static/css/main.14af92fb.css.map",
-    "main.68121d93.js.map": "/Aris_Seminary-2026/static/js/main.68121d93.js.map",
+    "main.c9f846c8.js.map": "/Aris_Seminary-2026/static/js/main.c9f846c8.js.map",
     "453.3a135c78.chunk.js.map": "/Aris_Seminary-2026/static/js/453.3a135c78.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.14af92fb.css",
-    "static/js/main.68121d93.js"
+    "static/js/main.c9f846c8.js"
   ]
 }
