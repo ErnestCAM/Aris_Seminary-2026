@@ -216,11 +216,7 @@ export default function ARISSeminaires() {
               </div>
             </div>
           </div>
-          <div className={`${currentTheme.card} p-6 rounded-2xl border-l-8 border-orange-500 shadow-md`}>
-            <p className={`text-sm ${currentTheme.text} italic`}>
-              <strong>Note :</strong> Une majoration de 25% s'applique automatiquement pour tout paiement après la date limite du 18 janvier.
-            </p>
-          </div>
+          
         </div>
       </section>
 
