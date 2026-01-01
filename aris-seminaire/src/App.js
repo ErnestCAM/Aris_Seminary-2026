@@ -2,7 +2,8 @@ import React, { useState, useEffect, useRef } from 'react';
 import { 
   Calendar, Clock, MapPin, Users, BookOpen, Award, Mail, Phone, 
   CheckCircle, Sun, Moon, Sunset, ChevronDown, Star, ClipboardCheck, 
-  Wallet, Wifi, Coffee, GraduationCap, ArrowRight, BrainCircuit, Search
+  Wallet, Wifi, Coffee, GraduationCap, ArrowRight, BrainCircuit, Search,
+  ExternalLink
 } from 'lucide-react';
 
 export default function ARISSeminaires() {
@@ -151,7 +152,7 @@ export default function ARISSeminaires() {
         </div>
       </section>
 
-      {/* Programme Intensif (Tableau issu de la capture) */}
+      {/* Programme Intensif */}
       <section className="py-20">
         <div className="container mx-auto px-4 max-w-5xl">
           <div className="flex items-center gap-3 mb-10 justify-center">
@@ -189,12 +190,11 @@ export default function ARISSeminaires() {
         </div>
       </section>
 
-      {/* Tarifs avec Majorations */}
+      {/* Tarifs */}
       <section className="py-20 px-4">
         <div className="container mx-auto max-w-4xl">
           <h3 className={`text-3xl font-black text-center mb-12 ${currentTheme.text}`}>Modalités & Tarifs</h3>
           <div className="grid md:grid-cols-2 gap-8 mb-10">
-            {/* Étudiant */}
             <div className={`${currentTheme.card} p-8 rounded-3xl border-2 border-blue-500 shadow-xl relative`}>
               <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-blue-500 text-white px-4 py-1 rounded-full text-sm font-bold">Étudiant</div>
               <div className="text-center">
@@ -205,7 +205,6 @@ export default function ARISSeminaires() {
                 <p className={`text-2xl font-bold ${currentTheme.text}`}>15 000 FCFA</p>
               </div>
             </div>
-            {/* Professionnel */}
             <div className={`${currentTheme.card} p-8 rounded-3xl border-2 border-green-500 shadow-xl relative`}>
               <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-green-500 text-white px-4 py-1 rounded-full text-sm font-bold">Professionnel</div>
               <div className="text-center">
@@ -217,17 +216,21 @@ export default function ARISSeminaires() {
               </div>
             </div>
           </div>
-
+          <div className={`${currentTheme.card} p-6 rounded-2xl border-l-8 border-orange-500 shadow-md`}>
+            <p className={`text-sm ${currentTheme.text} italic`}>
+              <strong>Note :</strong> Une majoration de 25% s'applique automatiquement pour tout paiement après la date limite du 18 janvier.
+            </p>
+          </div>
         </div>
       </section>
 
-      {/* Avantages & Inscription */}
-      <section className={`py-20 ${currentTheme.card} border-y ${currentTheme.border}`}>
+      {/* Inscription & Formulaire */}
+      <section id="inscription" className={`py-20 ${currentTheme.card} border-y ${currentTheme.border}`}>
         <div className="container mx-auto px-4 max-w-5xl">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="grid md:grid-cols-2 gap-12">
             <div>
               <h3 className={`text-3xl font-black mb-8 ${currentTheme.text}`}>Ce qui est inclus :</h3>
-              <ul className="space-y-4">
+              <ul className="space-y-4 mb-10">
                 {[
                   { icon: <Wifi className="text-blue-600"/>, text: "Internet Haut Débit gratuit sur place" },
                   { icon: <Coffee className="text-orange-600"/>, text: "Pauses café et déjeuner offerts" },
@@ -240,23 +243,44 @@ export default function ARISSeminaires() {
                 ))}
               </ul>
               
-              <div className="mt-12 p-8 bg-blue-600 rounded-3xl text-white shadow-2xl">
+              <div className="p-8 bg-blue-600 rounded-3xl text-white shadow-2xl">
                 <h4 className="text-2xl font-bold mb-4 flex items-center gap-2"><Wallet /> Comment s'inscrire ?</h4>
                 <ol className="space-y-4 list-decimal list-inside">
-                  <li>Remplissez le formulaire en ligne ci-contre.</li>
+                  <li>Remplissez le formulaire ci-contre.</li>
                   <li>Réglez via Orange (657 776 709) ou MTN (682 732 242).</li>
-                  <li>Paiement en espèces possible sur le campus de l'ESS-UCAC, sis à Ndokoti</li>
+                  <li>Paiement espèces possible au campus ESS-UCAC (Ndokoti).</li>
                 </ol>
               </div>
             </div>
 
-            <div id="inscription" className="relative">
-              <div className="absolute -inset-4 bg-blue-600 rounded-[3rem] blur-xl opacity-20"></div>
-              <div className="relative bg-white rounded-[2.5rem] overflow-hidden shadow-2xl border-4 border-blue-600">
-                <div className="p-4 bg-blue-600 text-white text-center font-bold">RESERVER MA PLACE</div>
+            <div className="relative">
+              {/* Bouton de secours Mobile */}
+              <div className="md:hidden mb-6 text-center">
+                <p className={`text-sm ${currentTheme.textSecondary} mb-4 italic`}>Un problème d'affichage ?</p>
+                <a 
+                  href="https://docs.google.com/forms/d/e/1FAIpQLSfvvUDLX-3pupB9L8TBYCmqFguFifE0k9kVNnT6w6pp7N6bNA/viewform" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-xl font-bold shadow-lg"
+                >
+                  <ExternalLink className="w-4 h-4" /> Ouvrir le formulaire
+                </a>
+              </div>
+
+              <div className="relative bg-white rounded-[2.5rem] overflow-hidden shadow-2xl border-4 border-blue-600 h-[650px]">
+                <div className="hidden md:block p-4 bg-blue-600 text-white text-center font-bold uppercase tracking-widest">
+                  Inscription Sécurisée
+                </div>
                 <iframe 
                   src="https://docs.google.com/forms/d/e/1FAIpQLSfvvUDLX-3pupB9L8TBYCmqFguFifE0k9kVNnT6w6pp7N6bNA/viewform?embedded=true" 
-                  width="100%" height="550" frameBorder="0" title="Form">Chargement…</iframe>
+                  width="100%" 
+                  height="100%" 
+                  frameBorder="0" 
+                  title="Form"
+                  style={{ minHeight: '550px' }}
+                >
+                  Chargement…
+                </iframe>
               </div>
             </div>
           </div>
